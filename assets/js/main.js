@@ -454,4 +454,45 @@
         });
     });
 
+	////////////////////////////////////////////////////
+	// 37. Active Navigation Js
+	var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+	
+	// Handle index.html as home page
+	if (currentPage === '' || currentPage === 'index.html' || currentPage === '/') {
+		currentPage = 'index.html';
+	}
+	
+	// Set active class for header navigation
+	$('.main-menu ul li a, .tp-header__transparent .main-menu ul li a').each(function() {
+		var $link = $(this);
+		var href = $link.attr('href');
+		
+		if (href) {
+			var linkPage = href.split('/').pop();
+			// Remove hash if present
+			linkPage = linkPage.split('#')[0];
+			
+			if (linkPage === currentPage || (currentPage === 'index.html' && (linkPage === '' || linkPage === 'index.html'))) {
+				$link.parent('li').addClass('active');
+			}
+		}
+	});
+	
+	// Set active class for footer navigation
+	$('.footer__widget ul li a').each(function() {
+		var $link = $(this);
+		var href = $link.attr('href');
+		
+		if (href) {
+			var linkPage = href.split('/').pop();
+			// Remove hash if present
+			linkPage = linkPage.split('#')[0];
+			
+			if (linkPage === currentPage || (currentPage === 'index.html' && (linkPage === '' || linkPage === 'index.html'))) {
+				$link.parent('li').addClass('active');
+			}
+		}
+	});
+
 })(jQuery);

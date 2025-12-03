@@ -2260,6 +2260,15 @@ input[type=color] {
   visibility: visible;
   opacity: 1;
 }
+.tp-header__transparent .main-menu ul li.active > a {
+  color: var(--tp-theme-primary);
+}
+.tp-header__transparent .main-menu ul li.active > a::after {
+  color: var(--tp-theme-primary);
+}
+.tp-header__transparent .main-menu ul li .submenu li.active > a {
+  color: var(--tp-theme-primary);
+}
 .tp-header__transparent .hamburger-btn span {
   background-color: var(--tp-common-white);
 }
@@ -2386,6 +2395,15 @@ input[type=color] {
   top: 100%;
   visibility: visible;
   opacity: 1;
+}
+.main-menu ul li.active > a {
+  color: var(--tp-theme-primary);
+}
+.main-menu ul li.active > a::after {
+  color: var(--tp-theme-primary);
+}
+.main-menu ul li .submenu li.active > a {
+  color: var(--tp-theme-primary);
 }
 
 .main-menu-2 ul li {
@@ -9063,6 +9081,23 @@ p.checkout-coupon input[type=text]:focus {
 }
 .footer__widget ul li a:hover {
   color: var(--tp-theme-primary);
+}
+.footer__widget ul li.active a {
+  color: var(--tp-theme-primary);
+  font-weight: 600;
+  position: relative;
+  padding-left: 15px;
+}
+.footer__widget ul li.active a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: var(--tp-theme-primary);
+  border-radius: 50%;
 }
 .footer__blog-meta {
   margin-bottom: 3px;
