@@ -101,35 +101,50 @@
 	}
 	smoothSctollTop();
 
-	// mainSlider
+	// Home Banner Slider (Swiper)
 	function mainSlider() {
-		var BasicSlider = $('.tp-slilder-active');
-		BasicSlider.on('init', function (e, slick) {
-			var $firstAnimatingElements = $('.tp-slider__item:first-child').find('[data-animation]');
-			doAnimations($firstAnimatingElements);
+		// Set background images from data-background attribute
+		$('.home-banner-swiper .tp-slider__item[data-background]').each(function() {
+			var bgImage = $(this).data('background');
+			$(this).css('background-image', 'url(' + bgImage + ')');
 		});
-		BasicSlider.on('beforeChange', function (e, slick, currentSlide, nextSlide) {
-			var $animatingElements = $('.tp-slider__item[data-slick-index="' + nextSlide + '"]').find('[data-animation]');
-			doAnimations($animatingElements);
-		});
-		BasicSlider.slick({
-			autoplay: true,
-			autoplaySpeed: 4000,
-			dots: false,
-			fade: true,
-			arrows: true,
-			appendArrows: '.tp-slider__arrows',
-			prevArrow: '<button type="button" class="slick-prev"><i class="arrow_carrot-left"></i></button>',
-			nextArrow: '<button type="button" class="slick-next"><i class="arrow_carrot-right"></i></button>',
-			responsive: [
-				{
-					breakpoint: 767,
-					settings: {
-						dots: false,
-						arrows: false
+
+		var mainSwiper = new Swiper('.home-banner-swiper', {
+			loop: true,
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true
+			},
+			autoplay: {
+				delay: 4000,
+				disableOnInteraction: false,
+			},
+			speed: 1000,
+			navigation: {
+				nextEl: '.tp-slider__arrows .swiper-button-next',
+				prevEl: '.tp-slider__arrows .swiper-button-prev',
+			},
+			on: {
+				init: function() {
+					var realIndex = this.realIndex;
+					var $firstSlide = $('.home-banner-swiper .swiper-slide').eq(realIndex);
+					var $firstAnimatingElements = $firstSlide.find('[data-animation]');
+					doAnimations($firstAnimatingElements);
+				},
+				slideChange: function() {
+					var realIndex = this.realIndex;
+					var $activeSlide = $('.home-banner-swiper .swiper-slide').eq(realIndex);
+					var $animatingElements = $activeSlide.find('[data-animation]');
+					doAnimations($animatingElements);
+				}
+			},
+			breakpoints: {
+				767: {
+					navigation: {
+						enabled: false
 					}
 				}
-			]
+			}
 		});
 
 		function doAnimations(elements) {
@@ -495,4 +510,5 @@
 		}
 	});
 
+	
 })(jQuery);

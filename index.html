@@ -80,7 +80,8 @@
    <link rel="stylesheet" href="./assets/css/bootstrap.css">
    <link rel="stylesheet" href="./assets/css/meanmenu.css">
    <link rel="stylesheet" href="./assets/css/animate.css">
-   <link rel="stylesheet" href="./assets/css/slick.css">
+   <!-- Swiper CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
    <link rel="stylesheet" href="./assets/css/magnific-popup.css">
    <link rel="stylesheet" href="./assets/css/nice-select.css">
    <!-- Font Awesome Free CDN (replaces Font Awesome Pro - font files missing) -->
@@ -288,69 +289,90 @@
 
    <main>
 
-      <!-- slider start  -->
-      <div class="tp-slider__section p-relative">
-         <div class="tp-slilder-active slick-initialized slick-slider">
-            <div aria-live="polite" class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 5715px;" role="listbox"><div class="tp-slider__item tp-slider__height tp-slider__overlay d-flex justify-content-center align-items-center slick-slide" data-background="assets/img/slider/slider-2.1.jpg" data-slick-index="0" style="background-image: url(&quot;assets/img/slider/slider-2.1.jpg&quot;); width: 1905px; position: relative; left: 0px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms;" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide00">
-               <div class="container">
-                  <div class="row justify-content-center">
-                     <div class="col-12">
-                        <div class="tp-slider__content text-center">
-                           <h1 class="tp-slider__title text-white" data-animation="fadeInUp" data-delay="0.5s" style="animation-delay: 0.5s;">Fazl E Omar Public School <br> O Lord, Increase my knowledge!
-                           </h1>
-                           <p class="text-white" data-animation="fadeInUp" data-delay="0.7s" style="animation-delay: 0.7s;">CBSE Affiliated | Established 1992 | 100% Success Rate | Benganapparamba, Koodali, Kannur</p>
-                           <div class="tp-slider__btn-wrappper p-relative z-index-1" data-animation="fadeInUp" data-delay="0.9s" style="animation-delay: 0.9s;">
-                              <a href="admission.html" class="tp-transparent-btn" tabindex="-1">
-                                 <span>Apply Now <i class="fas fa-arrow-right"></i></span>
-                                 <div class="transition"></div>
-                              </a>
+      <!-- Home Banner Slider Start (Swiper) -->
+      <section class="tp-slider__section p-relative">
+         <div class="swiper home-banner-swiper tp-slilder-active">
+            <div class="swiper-wrapper">
+               <!-- Slide 1 -->
+               <div class="swiper-slide tp-slider__item tp-slider__height tp-slider__overlay d-flex justify-content-center align-items-center" data-background="assets/img/slider/slider-2.1.jpg">
+                  <div class="container">
+                     <div class="row justify-content-center">
+                        <div class="col-12">
+                           <div class="tp-slider__content text-center">
+                              <h1 class="tp-slider__title text-white" data-animation="fadeInUp" data-delay="0.5s">
+                                 Fazl E Omar Public School <br> O Lord, Increase my knowledge!
+                              </h1>
+                              <p class="text-white" data-animation="fadeInUp" data-delay="0.7s">
+                                 CBSE Affiliated | Established 1992 | 100% Success Rate | Benganapparamba, Koodali, Kannur
+                              </p>
+                              <div class="tp-slider__btn-wrappper p-relative z-index-1" data-animation="fadeInUp" data-delay="0.9s">
+                                 <a href="admission.html" class="tp-transparent-btn">
+                                    <span>Apply Now <i class="fas fa-arrow-right"></i></span>
+                                    <div class="transition"></div>
+                                 </a>
+                              </div>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
-            </div><div class="tp-slider__item tp-slider__height tp-slider__overlay d-flex justify-content-center align-items-center slick-slide slick-current slick-active" data-background="assets/img/slider/slider-2.2.jpg" data-slick-index="1" style="background-image: url(&quot;assets/img/slider/slider-2.2.jpg&quot;); width: 1905px; position: relative; left: -1905px; top: 0px; z-index: 999; opacity: 1;" aria-hidden="false" tabindex="0" role="option" aria-describedby="slick-slide01">
-               <div class="container">
-                  <div class="row justify-content-center">
-                     <div class="col-12">
-                        <div class="tp-slider__content text-center">
-                           <h1 class="tp-slider__title text-white" data-animation="fadeInUp" data-delay="0.5s" style="animation-delay: 0.5s;">Academic Excellence <br> Since 1992
-                           </h1>
-                           <p class="text-white" data-animation="fadeInUp" data-delay="0.7s" style="animation-delay: 0.7s;">18 batches with 100% success in AISSE | Holistic development through academics, sports, and co-curricular activities.</p>
-                           <div class="tp-slider__btn-wrappper" data-animation="fadeInUp" data-delay="0.9s" style="animation-delay: 0.9s;">
-                              <a href="#academics" class="tp-transparent-btn" tabindex="0">
-                                 <span>Learn More <i class="fas fa-arrow-right"></i></span>
-                              </a>
+               <!-- Slide 2 -->
+               <div class="swiper-slide tp-slider__item tp-slider__height tp-slider__overlay d-flex justify-content-center align-items-center" data-background="assets/img/slider/slider-2.2.jpg">
+                  <div class="container">
+                     <div class="row justify-content-center">
+                        <div class="col-12">
+                           <div class="tp-slider__content text-center">
+                              <h1 class="tp-slider__title text-white" data-animation="fadeInUp" data-delay="0.5s">
+                                 Academic Excellence <br> Since 1992
+                              </h1>
+                              <p class="text-white" data-animation="fadeInUp" data-delay="0.7s">
+                                 18 batches with 100% success in AISSE | Holistic development through academics, sports, and co-curricular activities.
+                              </p>
+                              <div class="tp-slider__btn-wrappper" data-animation="fadeInUp" data-delay="0.9s">
+                                 <a href="#academics" class="tp-transparent-btn">
+                                    <span>Learn More <i class="fas fa-arrow-right"></i></span>
+                                 </a>
+                              </div>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
-            </div><div class="tp-slider__item tp-slider__height tp-slider__overlay d-flex justify-content-center align-items-center slick-slide" data-background="assets/img/slider/slider-2.3.jpg" data-slick-index="2" style="background-image: url(&quot;assets/img/slider/slider-2.3.jpg&quot;); width: 1905px; position: relative; left: -3810px; top: 0px; z-index: 998; opacity: 0; transition: opacity 500ms;" aria-hidden="true" tabindex="-1" role="option" aria-describedby="slick-slide02">
-               <div class="container">
-                  <div class="row justify-content-center">
-                     <div class="col-12">
-                        <div class="tp-slider__content text-center">
-                           <h1 class="tp-slider__title text-white" data-animation="fadeInUp" data-delay="0.5s" style="animation-delay: 0.5s;">Holistic Education <br> Character Building
-                           </h1>
-                           <p class="text-white" data-animation="fadeInUp" data-delay="0.7s" style="animation-delay: 0.7s;">Modern educational experience with strong emphasis on sports, scholarships, and close teacher-student relationships.</p>
-                           <div class="tp-slider__btn-wrappper" data-animation="fadeInUp" data-delay="0.9s" style="animation-delay: 0.9s;">
-                              <a href="#student-life" class="tp-transparent-btn" tabindex="-1">
-                                 <span>Explore Campus <i class="fas fa-arrow-right"></i></span>
-                              </a>
+               <!-- Slide 3 -->
+               <div class="swiper-slide tp-slider__item tp-slider__height tp-slider__overlay d-flex justify-content-center align-items-center" data-background="assets/img/slider/slider-2.3.jpg">
+                  <div class="container">
+                     <div class="row justify-content-center">
+                        <div class="col-12">
+                           <div class="tp-slider__content text-center">
+                              <h1 class="tp-slider__title text-white" data-animation="fadeInUp" data-delay="0.5s">
+                                 Holistic Education <br> Character Building
+                              </h1>
+                              <p class="text-white" data-animation="fadeInUp" data-delay="0.7s">
+                                 Modern educational experience with strong emphasis on sports, scholarships, and close teacher-student relationships.
+                              </p>
+                              <div class="tp-slider__btn-wrappper" data-animation="fadeInUp" data-delay="0.9s">
+                                 <a href="#student-life" class="tp-transparent-btn">
+                                    <span>Explore Campus <i class="fas fa-arrow-right"></i></span>
+                                 </a>
+                              </div>
                            </div>
                         </div>
                      </div>
                   </div>
                </div>
-            </div></div></div>
-            
-            
+            </div>
+            <!-- Navigation Arrows -->
+            <div class="tp-slider__arrows">
+               <button type="button" class="swiper-button-prev" aria-label="Previous slide">
+                  <i class="fas fa-chevron-left"></i>
+               </button>
+               <button type="button" class="swiper-button-next" aria-label="Next slide">
+                  <i class="fas fa-chevron-right"></i>
+               </button>
+            </div>
          </div>
-         <div class="tp-slider__arrows"><button type="button" class="slick-prev slick-arrow" style=""><i class="fas fa-chevron-left"></i></button>
-         <button type="button" class="slick-next slick-arrow" style=""><i class="fas fa-chevron-right"></i></button></div>
-      </div>
-      <!-- slider end  -->
+      </section>
+      <!-- Home Banner Slider End -->
 
       <!-- feature start  -->
       <div class="tp-feature-2__section">
@@ -994,7 +1016,8 @@
    <script src="./assets/js/waypoints.js"></script>
    <script src="./assets/js/bootstrap-bundle.js"></script>
    <script src="./assets/js/meanmenu.js"></script>
-   <script src="./assets/js/slick.js"></script>
+   <!-- Swiper JS -->
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
    <script src="./assets/js/magnific-popup.js"></script>
    <script src="./assets/js/parallax.js"></script>
    <script src="./assets/js/nice-select.js"></script>
