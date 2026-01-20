@@ -2723,7 +2723,7 @@ input[type=color] {
   transform: translate(0%, 0%);
   background-color: var(--tp-common-black);
   background-color: rgb(0, 6, 20);
-  opacity: 0.8;
+  opacity: 0.3;
   z-index: -1;
 }
 .tp-slider__subtitle {
