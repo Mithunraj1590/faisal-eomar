@@ -189,9 +189,6 @@
                                     <a href="student-life.html">Student Life</a>
                                  </li>
                                  <li>
-                                    <a href="news-events.html">News & Events</a>
-                                 </li>
-                                 <li>
                                     <a href="contact.html">Contact</a>
                                  </li>
                               </ul>
@@ -202,10 +199,11 @@
                      <div class="col-xxl-3 col-xl-3 col-lg-2 col-md-6 col-6">
                         <div class="tp-header__main-right d-flex justify-content-end align-items-center w-100">
                            <div class="tp-header__search d-none d-lg-block w-100">
-                              <form class="d-flex align-items-center w-100">
-                                 <input type="text" placeholder="Search..." class="form-control" style="flex: 1; width: auto;">
+                              <form class="d-flex align-items-center w-100" id="header-search-form">
+                                 <input type="text" id="header-search-input" placeholder="Search..." class="form-control" style="flex: 1; width: auto;" autocomplete="off">
                                  <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
                               </form>
+                              <div id="search-results" class="search-results-dropdown" style="display: none;"></div>
                            </div>
                            <div class="tp-header__hamburger ml-50 d-lg-none">
                               <button class="hamburger-btn offcanvas-open-btn">
@@ -516,110 +514,7 @@
       </div>
       <!-- key dates & forms end -->
 
-      <!-- online enquiry form start -->
-      <div class="tp-cta-2__section pt-120 pb-120 p-relative fix z-index-1" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-         <div class="container">
-            <div class="row justify-content-center">
-               <div class="col-lg-10 col-xl-8 mb-30">
-                  <div class="tp-form__main white-bg mb-30 p-relative" style="border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; border: 3px solid rgba(255,255,255,0.5);">
-                     <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; text-align: center; margin: -1px -1px 30px -1px; position: relative; overflow: hidden;">
-                        <!-- Small animated shapes in form header -->
-                        <div class="floating-shape" style="position: absolute; top: 10px; left: 20px; width: 25px; height: 25px; animation: bounce 2s ease-in-out infinite;">
-                           <i class="fas fa-star" style="font-size: 20px; color: rgba(255,215,0,0.6);"></i>
-                        </div>
-                        <div class="floating-shape" style="position: absolute; top: 15px; right: 25px; width: 22px; height: 22px; animation: bounce 2.5s ease-in-out infinite 0.5s;">
-                           <i class="fas fa-heart" style="font-size: 18px; color: rgba(255,182,193,0.6);"></i>
-                        </div>
-                        <div class="tp-cta-kids__icon mb-20" style="width: 80px; height: 80px; background: rgba(255,255,255,0.2); backdrop-filter: blur(10px); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; border: 3px solid rgba(255,255,255,0.3); animation: wiggle 3s ease-in-out infinite;">
-                           <span style="font-size: 40px; color: #fff;"><i class="fas fa-graduation-cap"></i></span>
-                        </div>
-                        <h4 style="color: #fff; margin: 0; font-size: 28px; font-weight: 700;">
-                           Online Admission Enquiry
-                        </h4>
-                        <p style="color: rgba(255,255,255,0.9); margin: 8px 0 0; font-size: 14px;">Fill the form below and we'll get back to you within 24 hours!</p>
-                     </div>
-                     <form style="padding: 0 40px 40px;">
-                        <div class="row">
-                           <div class="col-md-6">
-                              <div class="tp-form__field">
-                                 <label for="enquiry-name" style="color: #333; font-weight: 600;">
-                                    <i class="fas fa-user mr-5" style="color: #667eea;"></i>Parent/Guardian Name <span style="color: red;">*</span>
-                                 </label><br>
-                                 <input type="text" id="enquiry-name" placeholder="Enter full name" required style="border: 2px solid #e0e0e0; transition: all 0.3s;">
-                              </div>
-                           </div>
-                           <div class="col-md-6">
-                              <div class="tp-form__field">
-                                 <label for="enquiry-student" style="color: #333; font-weight: 600;">
-                                    <i class="fas fa-child mr-5" style="color: #667eea;"></i>Student Name <span style="color: red;">*</span>
-                                 </label><br>
-                                 <input type="text" id="enquiry-student" placeholder="Enter student name" required style="border: 2px solid #e0e0e0; transition: all 0.3s;">
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="col-md-6">
-                              <div class="tp-form__field">
-                                 <label for="enquiry-phone" style="color: #333; font-weight: 600;">
-                                    <i class="fas fa-phone mr-5" style="color: #667eea;"></i>Phone Number <span style="color: red;">*</span>
-                                 </label><br>
-                                 <input type="tel" id="enquiry-phone" placeholder="+91-XXXXXXXXXX" required style="border: 2px solid #e0e0e0; transition: all 0.3s;">
-                              </div>
-                           </div>
-                           <div class="col-md-6">
-                              <div class="tp-form__field">
-                                 <label for="enquiry-email" style="color: #333; font-weight: 600;">
-                                    <i class="fas fa-envelope mr-5" style="color: #667eea;"></i>E-mail <span style="color: red;">*</span>
-                                 </label><br>
-                                 <input type="email" id="enquiry-email" placeholder="your.email@example.com" required style="border: 2px solid #e0e0e0; transition: all 0.3s;">
-                              </div>
-                           </div>
-                        </div>
-                        <div class="tp-form__field">
-                           <label for="enquiry-class" style="color: #333; font-weight: 600;">
-                              <i class="fas fa-graduation-cap mr-5" style="color: #667eea;"></i>Class Seeking Admission <span style="color: red;">*</span>
-                           </label><br>
-                           <select id="enquiry-class" class="form-select select2-class" required>
-                              <option value="">Choose a class...</option>
-                              <option value="UKG">UKG (Upper Kindergarten)</option>
-                              <option value="1">Class 1</option>
-                              <option value="2">Class 2</option>
-                              <option value="3">Class 3</option>
-                              <option value="4">Class 4</option>
-                              <option value="5">Class 5</option>
-                              <option value="6">Class 6</option>
-                              <option value="7">Class 7</option>
-                              <option value="8">Class 8</option>
-                              <option value="9">Class 9</option>
-                              <option value="10">Class 10</option>
-                              <option value="11">Class 11</option>
-                              <option value="12">Class 12</option>
-                           </select>
-                        </div>
-                        <div class="tp-form__field">
-                           <label for="enquiry-message" style="color: #333; font-weight: 600;">
-                              <i class="fas fa-comment-alt mr-5" style="color: #667eea;"></i>Message / Questions
-                           </label><br>
-                           <textarea id="enquiry-message" placeholder="Any specific questions or information you'd like to share..." style="width: 100%; height: 100px; padding: 15px 20px; border: 2px solid #e0e0e0; background-color: #f5f5f5; border-radius: 6px; resize: vertical; transition: all 0.3s;"></textarea>
-                        </div>
-                        <div class="tp-form__btn">
-                           <button type="submit" class="tp-submit-btn" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; padding: 15px 40px; font-size: 18px; font-weight: 700; border-radius: 50px; box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4); width: 100%; transition: all 0.3s;">
-                              <i class="fas fa-paper-plane mr-10"></i>Submit Enquiry
-                           </button>
-                        </div>
-                        <p style="text-align: center; margin-top: 20px; color: #666; font-size: 13px;">
-                           <i class="fas fa-shield-alt mr-5" style="color: #4caf50;"></i>Your information is safe with us
-                        </p>
-                     </form>
-                     <div class="tp-form__main-shape">
-                        <img src="./assets/images/dots-shapes.png" alt="">
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- online enquiry form end -->
+   
 
       <!-- FAQ for parents start -->
       <div class="tp-courses-2__section grey-bg-2 pt-120 pb-120" id="faq">
@@ -767,7 +662,6 @@
                               <li><a href="admission.html">Admissions</a></li>
                               <li><a href="academics.html">Academics</a></li>
                               <li><a href="student-life.html">Student Life</a></li>
-                              <li><a href="news-events.html">News & Events</a></li>
                               <li><a href="contact.html">Contact Us</a></li>
                               <li><a href="about.html">About Us</a></li>
                            </ul>
@@ -789,33 +683,18 @@
                   </div>
                   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 mb-4">
                      <div class="footer__widget mb-50 footer-col-4">
-                        <h3 class="footer__widget-title">Newsletter</h3>
+                        <h3 class="footer__widget-title">School Hours</h3>
                         <div class="footer__widget-content">
-                           <p style="margin-bottom: 20px; line-height: 1.7; color: #666;">
-                              Stay connected with us! Subscribe to receive updates about admissions, events, achievements, and important announcements.
-                           </p>
-                           <form class="footer-newsletter-form">
-                              <div class="footer-newsletter-input">
-                                 <input type="email" placeholder="Enter your email address" required>
-                                 <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                              </div>
-                           </form>
-                           <p style="font-size: 13px; color: #999; margin-top: 12px; margin-bottom: 0;">
-                              <i class="fas fa-shield-alt" style="color: #4caf50; margin-right: 5px;"></i>We respect your privacy. Unsubscribe anytime.
-                           </p>
-                           <div style="margin-top: 25px; padding-top: 25px; border-top: 1px solid #e0e0e0;">
-                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #333;">School Hours</h5>
-                              <ul style="list-style: none; padding: 0; margin: 0;">
-                                 <li style="margin-bottom: 8px; color: #666;">
-                                    <i class="fas fa-clock" style="color: #2c79ff; margin-right: 8px; width: 16px;"></i>
-                                    <strong>Monday - Friday:</strong> 9:00 AM - 4:00 PM
-                                 </li>
-                                 <li style="margin-bottom: 0; color: #666;">
-                                    <i class="fas fa-clock" style="color: #2c79ff; margin-right: 8px; width: 16px;"></i>
-                                    <strong>Saturday:</strong> 9:00 AM - 12:30 PM
-                                 </li>
-                              </ul>
-                           </div>
+                           <ul style="list-style: none; padding: 0; margin: 0;">
+                              <li style="margin-bottom: 8px; color: #666;">
+                                 <i class="fas fa-clock" style="color: #2c79ff; margin-right: 8px; width: 16px;"></i>
+                                 <strong>Monday - Friday:</strong> 9:00 AM - 4:00 PM
+                              </li>
+                              <li style="margin-bottom: 0; color: #666;">
+                                 <i class="fas fa-clock" style="color: #2c79ff; margin-right: 8px; width: 16px;"></i>
+                                 <strong>Saturday:</strong> 9:00 AM - 12:30 PM
+                              </li>
+                           </ul>
                         </div>
                      </div>
                   </div>

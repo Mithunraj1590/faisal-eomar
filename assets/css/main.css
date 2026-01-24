@@ -2095,6 +2095,66 @@ input[type=color] {
   transform: translateY(-50%);
   right: 20px;
 }
+.tp-header__search {
+  position: relative !important;
+  z-index: 1000 !important;
+}
+.tp-header__search form {
+  position: relative !important;
+  z-index: 1001 !important;
+}
+.search-results-dropdown {
+  position: absolute !important;
+  top: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+  background: #fff !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  margin-top: 5px !important;
+  max-height: 400px !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  z-index: 99999 !important;
+  width: 100% !important;
+  min-width: 100% !important;
+}
+.search-results-list {
+  padding: 0;
+}
+.search-result-item {
+  display: block;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.2s;
+}
+.search-result-item:hover {
+  background-color: #f8f9fa;
+  text-decoration: none;
+  color: #333;
+}
+.search-result-item:last-child {
+  border-bottom: none;
+}
+.search-result-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #2c79ff;
+  margin-bottom: 4px;
+}
+.search-result-match {
+  font-size: 12px;
+  color: #666;
+}
+.search-no-results {
+  padding: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
 .tp-header__search-2 form {
   padding-top: 17px;
   padding-bottom: 17px;
@@ -2733,7 +2793,7 @@ input[type=color] {
   display: inline-block;
 }
 .tp-slider__title {
-  font-size: 90px;
+  font-size: 80px;
   color: var(--tp-common-white);
   font-weight: var(--tp-fw-bold);
   line-height: 1.1;
@@ -2766,7 +2826,7 @@ input[type=color] {
   text-transform: uppercase;
 }
 .tp-slider__content p {
-  font-size: 18px;
+  font-size: 22px;
   line-height: 28px;
   color: var(--tp-common-white);
   margin-bottom: 45px;
@@ -9899,3 +9959,11 @@ p.checkout-coupon input[type=text]:focus {
 }
 
 /*# sourceMappingURL=main.css.map */
+
+.gallery-popup{
+  display: inline-block;
+  width: 100%;
+  img{
+    object-fit: cover;
+  }
+}

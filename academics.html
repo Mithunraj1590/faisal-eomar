@@ -168,9 +168,6 @@
                                     <a href="student-life.html">Student Life</a>
                                  </li>
                                  <li>
-                                    <a href="news-events.html">News & Events</a>
-                                 </li>
-                                 <li>
                                     <a href="contact.html">Contact</a>
                                  </li>
                               </ul>
@@ -181,10 +178,11 @@
                      <div class="col-xxl-3 col-xl-3 col-lg-2 col-md-6 col-6">
                         <div class="tp-header__main-right d-flex justify-content-end align-items-center w-100">
                            <div class="tp-header__search d-none d-lg-block w-100">
-                              <form class="d-flex align-items-center w-100">
-                                 <input type="text" placeholder="Search..." class="form-control" style="flex: 1; width: auto;">
+                              <form class="d-flex align-items-center w-100" id="header-search-form">
+                                 <input type="text" id="header-search-input" placeholder="Search..." class="form-control" style="flex: 1; width: auto;" autocomplete="off">
                                  <button type="submit" class="btn-search"><i class="fas fa-search"></i></button>
                               </form>
+                              <div id="search-results" class="search-results-dropdown" style="display: none;"></div>
                            </div>
                            <div class="tp-header__hamburger ml-50 d-lg-none">
                               <button class="hamburger-btn offcanvas-open-btn">
@@ -453,7 +451,6 @@
                               <li><a href="admission.html">Admissions</a></li>
                               <li><a href="academics.html">Academics</a></li>
                               <li><a href="student-life.html">Student Life</a></li>
-                              <li><a href="news-events.html">News & Events</a></li>
                               <li><a href="contact.html">Contact Us</a></li>
                               <li><a href="about.html">About Us</a></li>
                            </ul>
@@ -475,33 +472,18 @@
                   </div>
                   <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-6 mb-4">
                      <div class="footer__widget mb-50 footer-col-4">
-                        <h3 class="footer__widget-title">Newsletter</h3>
+                        <h3 class="footer__widget-title">School Hours</h3>
                         <div class="footer__widget-content">
-                           <p style="margin-bottom: 20px; line-height: 1.7; color: #666;">
-                              Stay connected with us! Subscribe to receive updates about admissions, events, achievements, and important announcements.
-                           </p>
-                           <form class="footer-newsletter-form">
-                              <div class="footer-newsletter-input">
-                                 <input type="email" placeholder="Enter your email address" required>
-                                 <button type="submit"><i class="fas fa-paper-plane"></i></button>
-                              </div>
-                           </form>
-                           <p style="font-size: 13px; color: #999; margin-top: 12px; margin-bottom: 0;">
-                              <i class="fas fa-shield-alt" style="color: #4caf50; margin-right: 5px;"></i>We respect your privacy. Unsubscribe anytime.
-                           </p>
-                           <div style="margin-top: 25px; padding-top: 25px; border-top: 1px solid #e0e0e0;">
-                              <h5 style="font-size: 16px; font-weight: 700; margin-bottom: 15px; color: #333;">School Hours</h5>
-                              <ul style="list-style: none; padding: 0; margin: 0;">
-                                 <li style="margin-bottom: 8px; color: #666;">
-                                    <i class="fas fa-clock" style="color: #2c79ff; margin-right: 8px; width: 16px;"></i>
-                                    <strong>Monday - Friday:</strong> 9:00 AM - 4:00 PM
-                                 </li>
-                                 <li style="margin-bottom: 0; color: #666;">
-                                    <i class="fas fa-clock" style="color: #2c79ff; margin-right: 8px; width: 16px;"></i>
-                                    <strong>Saturday:</strong> 9:00 AM - 12:30 PM
-                                 </li>
-                              </ul>
-                           </div>
+                           <ul style="list-style: none; padding: 0; margin: 0;">
+                              <li style="margin-bottom: 8px; color: #666;">
+                                 <i class="fas fa-clock" style="color: #2c79ff; margin-right: 8px; width: 16px;"></i>
+                                 <strong>Monday - Friday:</strong> 9:00 AM - 4:00 PM
+                              </li>
+                              <li style="margin-bottom: 0; color: #666;">
+                                 <i class="fas fa-clock" style="color: #2c79ff; margin-right: 8px; width: 16px;"></i>
+                                 <strong>Saturday:</strong> 9:00 AM - 12:30 PM
+                              </li>
+                           </ul>
                         </div>
                      </div>
                   </div>
