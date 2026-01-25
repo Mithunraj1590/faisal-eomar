@@ -891,11 +891,17 @@ input[type=color] {
 .pulse-btn i {
   padding-left: 2px;
 }
-
+.tp-about-2__thumb{
+  width: 100%;
+  margin-bottom: 30px;
+}
+.tp-about-2__thumb img{
+  width: 100%;
+}
 /* hambur btn */
 .hamburger-btn {
   width: 30px;
-  height: 30px;
+  height: 25px;
   position: relative;
   -webkit-transition: 0.5s ease-in-out;
   -moz-transition: 0.5s ease-in-out;
@@ -905,6 +911,12 @@ input[type=color] {
   background: transparent;
   border: 0;
   outline: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* justify-content: flex-end; */
+  align-items: center;
+  /* width: 100%; */
 }
 .hamburger-btn span {
   display: inline-block;
@@ -1818,10 +1830,16 @@ input[type=color] {
     padding-right: 0px;
   }
 }
-@media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 575px), only screen and (min-width: 576px) and (max-width: 767px) {
+@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 576px) and (max-width: 767px) {
   .tp-header__main {
     padding-top: 20px;
     padding-bottom: 20px;
+  }
+}
+@media (max-width: 575px) {
+  .tp-header__main {
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 }
 .tp-header__top {
@@ -1939,6 +1957,10 @@ input[type=color] {
 }
 .tp-header__hamburger {
   margin-top: 3px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
 }
 .tp-header__sticky.header__sticky {
   position: fixed !important;
@@ -2095,66 +2117,6 @@ input[type=color] {
   transform: translateY(-50%);
   right: 20px;
 }
-.tp-header__search {
-  position: relative !important;
-  z-index: 1000 !important;
-}
-.tp-header__search form {
-  position: relative !important;
-  z-index: 1001 !important;
-}
-.search-results-dropdown {
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
-  right: 0 !important;
-  background: #fff !important;
-  border: 1px solid #e0e0e0 !important;
-  border-radius: 6px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  margin-top: 5px !important;
-  max-height: 400px !important;
-  overflow-y: auto !important;
-  overflow-x: hidden !important;
-  z-index: 99999 !important;
-  width: 100% !important;
-  min-width: 100% !important;
-}
-.search-results-list {
-  padding: 0;
-}
-.search-result-item {
-  display: block;
-  padding: 12px 20px;
-  border-bottom: 1px solid #f0f0f0;
-  text-decoration: none;
-  color: #333;
-  transition: background-color 0.2s;
-}
-.search-result-item:hover {
-  background-color: #f8f9fa;
-  text-decoration: none;
-  color: #333;
-}
-.search-result-item:last-child {
-  border-bottom: none;
-}
-.search-result-title {
-  font-weight: 600;
-  font-size: 14px;
-  color: #2c79ff;
-  margin-bottom: 4px;
-}
-.search-result-match {
-  font-size: 12px;
-  color: #666;
-}
-.search-no-results {
-  padding: 20px;
-  text-align: center;
-  color: #999;
-  font-size: 14px;
-}
 .tp-header__search-2 form {
   padding-top: 17px;
   padding-bottom: 17px;
@@ -2187,6 +2149,13 @@ input[type=color] {
   max-height: 60px;
   object-fit: contain;
 }
+@media only screen and (max-width: 991px) {
+  .logo img {
+    width: 70px;
+    height: 50px;
+    object-fit: contain;
+  }
+}
 
 .cat-dot-icon {
   margin-right: 10px;
@@ -2201,6 +2170,11 @@ input[type=color] {
   animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
   box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.09);
   z-index: 91;
+}
+@media (max-width: 575px) {
+  .header-sticky {
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.09);
+  }
 }
 
 /* main menu css */
@@ -2341,6 +2315,39 @@ input[type=color] {
     padding-left: 30px;
   }
 }
+
+/* Right align menu on laptop and desktop */
+@media only screen and (min-width: 992px) {
+  .main-menu {
+    text-align: right !important;
+  }
+  
+  .main-menu ul {
+    justify-content: flex-end !important;
+    display: flex !important;
+  }
+  
+  .main-menu ul li {
+    text-align: right !important;
+  }
+  
+  /* Fix submenu positioning for right-aligned menu */
+  .main-menu ul li .submenu {
+    left: auto !important;
+    right: 0 !important;
+  }
+  
+  /* Fix nested submenu positioning */
+  .main-menu ul li .submenu li .submenu {
+    left: auto !important;
+    right: 100% !important;
+  }
+  
+  .main-menu ul li .submenu li:hover > .submenu {
+    left: auto !important;
+    right: 100% !important;
+  }
+}
 .main-menu ul li {
   position: relative;
   list-style: none;
@@ -2398,6 +2405,8 @@ input[type=color] {
   -ms-box-shadow: 0px 30px 70px 0px rgba(11, 6, 70, 0.08);
   -o-box-shadow: 0px 30px 70px 0px rgba(11, 6, 70, 0.08);
   box-shadow: 0px 30px 70px 0px rgba(11, 6, 70, 0.08);
+  display: flex;
+  flex-direction: column;
 }
 .main-menu ul li .submenu li {
   display: block;
@@ -2704,6 +2713,10 @@ input[type=color] {
 /*----------------------------------------*/
 .tp-slider__section {
   margin-bottom: -70px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 .tp-slider__section .swiper {
   width: 100%;
@@ -9737,7 +9750,7 @@ p.checkout-coupon input[type=text]:focus {
   position: relative;
   overflow: hidden;
   transition: all 0.3s ease;
-  padding: 50px;
+  padding: 30px;
 }
 
 .tp-vision-mission__item:hover {
@@ -9797,6 +9810,423 @@ p.checkout-coupon input[type=text]:focus {
 
 .tp-vision-mission__icon--mission {
   background: linear-gradient(135deg, #ffa423 0%, #ffb84d 100%);
+}
+
+/* ============================================
+   COMPREHENSIVE RESPONSIVE STYLES
+   ============================================ */
+
+/* Mobile Devices (up to 575px) */
+@media (max-width: 575px) {
+  /* Typography */
+  h1, .h1, .tp-slider__title {
+    font-size: 24px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h2, .h2, .tp-section__title {
+    font-size: 22px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3, .h3 {
+    font-size: 20px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h4, .h4 {
+    font-size: 18px !important;
+  }
+  
+  p, .tp-slider__content p {
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+  }
+  
+  /* Container & Spacing */
+  .container, .container-fluid {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  .tp-slider__content {
+    padding: 20px 15px !important;
+  }
+  
+  /* Header - Make it smaller on mobile */
+  .tp-header__main {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    min-height: auto !important;
+  }
+  
+  .tp-header__area {
+    padding: 0 !important;
+  }
+  
+  .tp-header__container {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+  
+  .tp-header__top {
+    padding: 10px 0 !important;
+  }
+  
+  .tp-header__top-right ul li {
+    font-size: 12px !important;
+    padding: 0 5px !important;
+  }
+  
+  .tp-header-left {
+    padding: 0 !important;
+  }
+  
+  .tp-header__main-right {
+    padding: 0 !important;
+  }
+  
+  .tp-header__hamburger {
+    margin-left: 10px !important;
+  }
+  
+  .hamburger-btn {
+    width: 35px !important;
+    height: 35px !important;
+    padding: 5px !important;
+  }
+  
+  .hamburger-btn span {
+    height: 2px !important;
+    margin: 4px 0 !important;
+  }
+  
+  /* Buttons */
+  .tp-btn, .tp-transparent-btn, .tp-white-btn {
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+  }
+  
+  /* Sections */
+  section {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  
+  /* No padding for slider section */
+  .tp-slider__section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Override Bootstrap padding utility classes on mobile */
+  .pt-120, .pt-100, .pt-90, .pt-80, .pt-70, .pt-60, .pt-50, .pt-40, .pt-30 {
+    padding-top: 30px !important;
+  }
+  
+  .pb-120, .pb-100, .pb-90, .pb-80, .pb-70, .pb-60, .pb-50, .pb-40, .pb-30 {
+    padding-bottom: 30px !important;
+  }
+  
+  .py-120, .py-100, .py-90, .py-80, .py-70, .py-60, .py-50, .py-40, .py-30 {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  
+  /* Override Bootstrap padding utilities more broadly */
+  [class^="pt-"], [class*=" pt-"] {
+    padding-top: 30px !important;
+  }
+  
+  [class^="pb-"], [class*=" pb-"] {
+    padding-bottom: 30px !important;
+  }
+  
+  [class^="py-"], [class*=" py-"] {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  
+  /* Specific section classes for even smaller padding if needed */
+  .tp-section,
+  .tp-about__section,
+  .tp-about-2__section,
+  .tp-feature__section,
+  .tp-feature-2__section,
+  .tp-cta__section,
+  .tp-vision-mission__section,
+  .tp-counter__section {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+  }
+  
+  .tp-section__title {
+    margin-bottom: 20px !important;
+  }
+  
+  /* Images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  
+  /* Forms */
+  .tp-form__main {
+    padding: 30px 15px !important;
+  }
+  
+  .tp-form__field input,
+  .tp-form__field textarea,
+  .tp-form__field select {
+    font-size: 14px !important;
+    padding: 12px 15px !important;
+  }
+  
+  /* Footer */
+  .tp-footer__widget {
+    margin-bottom: 30px !important;
+  }
+  
+  .tp-footer__widget-title {
+    font-size: 18px !important;
+    margin-bottom: 15px !important;
+  }
+  
+  /* Cards & Boxes */
+  .tp-feature__item,
+  .tp-about__feature-item,
+  .tp-vision-mission__item {
+    padding: 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  /* Grid adjustments */
+  .row {
+    margin-left: -10px !important;
+    margin-right: -10px !important;
+  }
+  
+  .row > * {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+}
+
+/* Tablet Devices (576px - 991px) */
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+  /* Typography */
+  h1, .h1, .tp-slider__title {
+    font-size: 32px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h2, .h2, .tp-section__title {
+    font-size: 28px !important;
+    line-height: 1.3 !important;
+  }
+  
+  h3, .h3 {
+    font-size: 24px !important;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 100% !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  
+  /* Sections */
+  section {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+  
+  /* No padding for slider section */
+  .tp-slider__section {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  
+  /* Header */
+  .tp-header__top {
+    padding: 12px 0 !important;
+  }
+  
+  /* Buttons */
+  .tp-btn, .tp-transparent-btn {
+    padding: 14px 28px !important;
+    font-size: 15px !important;
+  }
+  
+  /* Forms */
+  .tp-form__main {
+    padding: 40px 30px !important;
+  }
+  
+  /* Cards */
+  .tp-feature__item,
+  .tp-about__feature-item {
+    padding: 25px !important;
+  }
+}
+
+/* Laptop Devices (992px - 1399px) */
+@media only screen and (min-width: 992px) and (max-width: 1399px) {
+  /* Typography */
+  h1, .h1, .tp-slider__title {
+    font-size: 38px !important;
+  }
+  
+  h2, .h2, .tp-section__title {
+    font-size: 32px !important;
+  }
+  
+  /* Container */
+  .container {
+    max-width: 1200px !important;
+  }
+  
+  /* Sections */
+  section {
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
+  }
+  
+  /* Navigation */
+  .main-menu ul li {
+    margin-right: 25px !important;
+  }
+  
+  .main-menu ul li a {
+    font-size: 15px !important;
+  }
+}
+
+/* Large Desktop Devices (1400px and above) */
+@media only screen and (min-width: 1400px) {
+  /* Container */
+  .container {
+    max-width: 1320px !important;
+  }
+  
+  /* Typography */
+  h1, .h1, .tp-slider__title {
+    font-size: 48px !important;
+  }
+  
+  h2, .h2, .tp-section__title {
+    font-size: 40px !important;
+  }
+  
+  /* Sections */
+  section {
+    padding-top: 100px !important;
+    padding-bottom: 100px !important;
+  }
+  
+  /* Navigation */
+  .container-fluid {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+}
+
+/* Additional Responsive Utilities */
+@media (max-width: 991px) {
+  /* Hide desktop menu, show mobile menu */
+  .d-lg-block {
+    display: none !important;
+  }
+  
+  /* Adjust spacing */
+  .mb-lg-0 {
+    margin-bottom: 30px !important;
+  }
+  
+  /* Center align text on mobile */
+  .text-lg-left {
+    text-align: center !important;
+  }
+}
+
+/* Image Responsiveness */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ensure all background images are responsive */
+[data-background],
+[style*="background-image"] {
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* Swiper/Slider Responsive */
+@media (max-width: 575px) {
+  .swiper-slide {
+    min-height: 400px !important;
+  }
+  
+  .tp-slider__height {
+    min-height: 400px !important;
+  }
+}
+
+/* Form Responsive */
+@media (max-width: 767px) {
+  .tp-form__main {
+    margin: 0 !important;
+  }
+  
+  .tp-form__field {
+    margin-bottom: 15px !important;
+  }
+}
+
+/* Footer Responsive */
+@media (max-width: 991px) {
+  .tp-footer__widget {
+    text-align: center !important;
+  }
+  
+  .tp-footer__social {
+    justify-content: center !important;
+  }
+}
+
+/* Table Responsive */
+@media (max-width: 767px) {
+  table {
+    display: block !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+}
+
+/* Ensure proper viewport scaling */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Fix for iOS Safari */
+@supports (-webkit-touch-callout: none) {
+  body {
+    min-height: -webkit-fill-available;
+  }
 }
 
 .tp-vision-mission__icon span {
